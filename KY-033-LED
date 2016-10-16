@@ -1,0 +1,17 @@
+int LedPin = 13;
+int sensorPin = A5;
+int sensorValue = 0;
+
+void setup() {
+  pinMode(LedPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin);
+  if (sensorValue < 500) {
+    digitalWrite (LedPin, HIGH);  
+  } else {
+    digitalWrite (LedPin, LOW);  
+  }
+}
