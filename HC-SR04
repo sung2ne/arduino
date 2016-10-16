@@ -1,0 +1,22 @@
+void setup() {
+  Serial.begin(9600);
+  pinMode(9, OUTPUT); // Trig 핀
+  pinMode(8, INPUT);  // Echo 핀
+}
+
+void loop() {
+  long duration, cm;
+
+  digitalWrite(9, HIGH);  // Trig 신호 On
+  delayMicroseconds(10);  // 10us 유지
+  digitalWrite(9, LOW);   // Trig 신호 Off
+
+  duration = pulseIn(8, HIGH);  // Echo 핀을 이용해서 High -> Low 간격 측정
+  cm = duration / 29 / 2; // 거리(cm) 측정
+
+  Serial.print(cm);
+  Serial.print("cm");
+  Serial.println();
+
+  delay(100); // 0.3초 대기 후 다시 측정
+}
