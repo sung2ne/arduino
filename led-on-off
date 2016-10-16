@@ -1,10 +1,12 @@
+int LedPin = 13;
+
 void setup() {
-  pinMode(13, OUTPUT);
+  pinMode(LedPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH); // LED On
+  digitalWrite(LedPin, HIGH); // LED On
   delay(1000);  // 1초 대기
-  digitalWrite(13, LOW);  // LED Off
+  digitalWrite(LedPin, LOW);  // LED Off
   delay(1000);
 }
